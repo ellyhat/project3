@@ -1,5 +1,6 @@
 const express = require('express') //add module
 const app = express()
+var crypto = require("crypto-js")
 const PORT = 3000
 const db = require('./data.js')
 
@@ -42,5 +43,24 @@ app.get('/users/:userNum/schedules', (req,res) => {
     else res.send('No schedule for that user number')   
 }) 
 
-// Step 4
+app.use(express.urlencoded({ extended: true }))
 
+app.post('/users', (req, res)=> {
+    
+    const newUser = req.body
+    newUser.password = crypto.SHA256(`${req.body.password}`).toString()
+    db.users.push(newUser)
+    res.json(db.users)
+  
+})
+
+app.post('/schedules', (req, res)=> {
+    
+    const newSchedule = req.body
+    db.schedules.push(newSchedule)
+    res.json(db.schedules)
+})
+
+
+
+// Step 4 - queries
