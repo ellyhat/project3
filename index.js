@@ -1,5 +1,11 @@
 const express = require('express') //add module
+const morgan = require('morgan') //add morgan, logs HTTPS codes
+
 const app = express()
+
+app.set('view engine', 'ejs')
+app.use(morgan('dev'))
+
 var crypto = require("crypto-js")
 const PORT = 3000
 const db = require('./data.js')
@@ -57,6 +63,10 @@ app.post('/users', (req, res)=> {
 app.post('/schedules', (req, res)=> {
     
     const newSchedule = req.body
+    console.log(newSchedule)
+    newSchedule.user_id = Number(req.body.user_id)
+    console.log(typeof(newSchedule.user_id))
+    newSchedule.day = Number(req.body.day)
     db.schedules.push(newSchedule)
     res.json(db.schedules)
 })
