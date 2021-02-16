@@ -1,10 +1,13 @@
 const express = require('express') //add module
 const morgan = require('morgan') //add morgan, logs HTTPS codes
+const expressLayouts = require('express-ejs-layouts')
 
 const app = express()
+app.use(morgan('dev'))
 
 app.set('view engine', 'ejs')
-app.use(morgan('dev'))
+app.use(expressLayouts)
+app.set('layout', './pages/layout.ejs')
 
 var crypto = require("crypto-js")
 const PORT = 3000
@@ -15,7 +18,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req,res) => {
-res.render('pages/index.ejs')
+res.render('./pages/index.ejs')
 })
 
 //Step 2
@@ -70,7 +73,3 @@ app.post('/schedules', (req, res)=> {
     db.schedules.push(newSchedule)
     res.json(db.schedules)
 })
-
-
-
-// Step 4 - queries
