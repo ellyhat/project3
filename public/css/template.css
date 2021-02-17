@@ -102,4 +102,102 @@ footer {
     margin: 10px 0px 10px 20px;    
 }
 
+/*******COMMON*****/
+h1 {
+    text-align: center;
+}
 
+.page-space {
+    height: 5vh;
+}
+
+/*****USERS****/
+
+/*.container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    background-color: red;
+}*/
+
+/*ol {
+    max-height: 80vh;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}*/
+
+ul > li {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*****FORM****/
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10em;
+    margin-top: 3em;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 2vh;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #c4cad0;
+  }
+
+  input[type=submit] {
+    width: 30%;
+    padding: 2vh;
+    margin: 50px auto 22px auto;
+    display: center;
+    border: none;
+    background: #c4cad0;
+    color: white;
+    background-color: rgba(106,123,139,255);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Avenir Next Cyr', serif;
+    font-weight: bolder;
+}
+
+.users {
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.users-list {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.user-item {
+    margin-right: 20px; 
+    margin-left: 20px;
+    background: rgba(0,0,0,0.1);
+    width: 25%;
+}
+
+.user-item > div {
+    padding-bottom: 10px;
+}

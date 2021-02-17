@@ -1,0 +1,10 @@
+<h1> Specific Schedule Request</h1>
+<div class = "page-space"></div>
+
+
+<ol start = "1">
+    <% for(let i = 0; i < specificSchedule.length; i++) { %>
+    <li><b>User ID:</b> <%=specificSchedule[i].user_id %>, <br></br><b>Day</b> <%=specificSchedule[i].day %>,<br></br> 
+        <b>Start:</b> <%=specificSchedule[i].start_at %> <br></br> <b>End:</b> <%=specificSchedule[i].start_at %> </li>
+    <%} %>
+</ol>
