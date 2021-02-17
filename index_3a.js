@@ -70,7 +70,3 @@ app.post('/schedules', (req, res)=> {
     db.schedules.push(newSchedule)
     res.json(db.schedules)
 })
-
-
-
-// Step 4 - queries

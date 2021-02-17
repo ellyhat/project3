@@ -5,6 +5,12 @@ const expressLayouts = require('express-ejs-layouts')
 const app = express()
 app.use(morgan('dev'))
 
+//Static files - CSS
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
+
+
+// Set templating engine
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
 app.set('layout', './pages/layout.ejs')
@@ -18,7 +24,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req,res) => {
-res.render('./pages/index.ejs')
+res.render('./pages/index.ejs', {title: 'Schedule Website', layout: './pages/layout'})
 })
 
 //Step 2

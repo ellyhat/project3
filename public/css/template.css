@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+/************** Header ************/
+
+header {
+    background: rgb(106, 123, 139);
+    height: 12vh;
+    width: 100vw;
+    color: white;
+}
+
+/************** Navigation menu ************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > .menu-items {
+    display: flex;
+    list-style-type: none;
+    width: 400px;
+    justify-content: space-around;
+    margin-right: 10px;
+    font-family: 'Archivo', serif;
+
+}
+
+img.logo-resize {				
+    width: 150px;
+    height: 60px;
+    margin: 20px 0 20px 30px; 
+}
+
+a {
+    color: white;
+    text-decoration:none;
+}
+
+/************** Common page elements ************/
+
+/*Set basic common styling on page */
+
+body {
+    background-color: rgb(245, 247, 246); 
+    min-width: 100vw;
+}
+
+main {
+   width: 80vw;
+   margin: 0 auto;
+   height: 100vh;
+   font-family: 'Avenir Next Cyr';
+   color: #5c5b5b;
+}
+
+/*Top banner on every page */
+
+section.top-banner {
+    height: 20vh; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.hero-icon {                           
+    width: 20vh;
+}
+
+/************** Footer ************/
+
+footer {
+    background: rgb(106, 123, 139);
+    text-align: center;
+    color: white;
+    padding:10px;
+}
+
+
+.icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 200px;
+}
+
+.icon-resize {
+    height: 50px;
+    padding: 20px 20px 0 0;
+}
+
+.footer-img {
+    float: left;
+    width: 40px;
+    height: 70px;
+    margin: 10px 0px 10px 20px;    
+}
+
+
