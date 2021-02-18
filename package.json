@@ -4,7 +4,8 @@
   "description": "",
   "main": "index_3c.js",
   "scripts": {
-    "start": "node index_3c.js",
+    "create-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/create_schedule_table.sql",
+    "seed-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/seed_schedule_table.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
