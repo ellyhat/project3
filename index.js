@@ -17,9 +17,17 @@ app.use(expressLayouts)
 app.set('layout', './pages/layout.ejs')
 
 var crypto = require("crypto-js")
-const PORT = 3001
+const PORT = 3000
 const db = require('./data.js')
 
+//Recycled functions
+/*function collectInfo (arg) {
+    let arrNew = []
+    for (i = 0; i < arg.length; i++) {
+        arrNew.push(arg[i])
+    }
+    return arrNew
+}*/
 
 app.listen(PORT, () => {
     console.log(`server is listening on ${PORT}`) 
@@ -37,8 +45,8 @@ app.get('/', (req,res) => {
 
     database.any('SELECT * from schedule;')
     //we are about to do a PROMISE
-    .then((scheduleTable) => {
-        console.log(scheduleTable)
+    .then((response) => {
+        console.log(response)
     })
 
     res.render('./pages/index', {title: 'Schedule Website', layout: './pages/layout'})
