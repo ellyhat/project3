@@ -1,0 +1,47 @@
+<!--<div class="users">
+<h1> List of Schedules </h1>
+
+
+<div class = "users-list">
+    <% for(let i = 0; i < scheduleTable.length; i++) { %>
+    <div class = "user-item">
+        <div>
+            ID: <%=scheduleTable[i].user_id %>
+        </div>
+        <div>
+            Name: <%=scheduleTable[i].user_name %>
+        </div>
+        <div>
+            Day:<%=scheduleTable[i].day %>
+        </div>
+        <div>
+            Start Time:<%=scheduleTable[i].start_time %>
+        </div>
+        <div>
+            End Time:<%=scheduleTable[i].end_time %>
+        </div>
+    </div>
+    <%} %>
+</div>-->
+
+<%  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %>
+<div class="users">
+<h1> List of Schedules </h1>
+<table>
+  <th>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Day</td>
+    <td>Start Time</td>
+    <td>End Time</td>
+  </th>
+  <% for(let i = 0; i < scheduleTable.length; i++) { %>
+  <tr>
+    <td><%=scheduleTable[i].user_id %></td>
+    <td><%=scheduleTable[i].user_name %></td>
+    <td><%= daysOfWeek[scheduleTable[i].day -1] %></td>
+    <td><%=scheduleTable[i].start_time %></td>
+    <td><%=scheduleTable[i].end_time %></td>
+  </tr>
+  <%} %>
+</table>
