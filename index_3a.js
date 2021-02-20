@@ -72,9 +72,7 @@ app.post('/users', (req, res) => {
 app.post('/schedules', (req, res) => {
 
     const newSchedule = req.body
-    console.log(newSchedule)
     newSchedule.user_id = Number(req.body.user_id)
-    console.log(typeof (newSchedule.user_id))
     newSchedule.day = Number(req.body.day)
     db.schedules.push(newSchedule)
     res.json(db.schedules)
