@@ -101,5 +101,5 @@ app.post('/schedules', (req, res) => {
     newSchedule.day = Number(req.body.day)
     db.schedules.push(newSchedule)
     let schedules = db.schedules
-    res.render('./pages/schedules', { title: 'New Schedule Form', layout: './pages/layout', schedules: schedules })
+    res.render('./pages/schedules', { title: 'Schedules', layout: './pages/layout', schedules: schedules })
 })
