@@ -1,18 +1,22 @@
 //Step 1 - Set up the express app: add modules
+
 const express = require('express')
 const app = express()
 var crypto = require("crypto-js")
 
 //Add PORT and import data
+
 const PORT = 3000
 const db = require('./data.js')
 
 //Test that PORT is working
+
 app.listen(PORT, () => {
     console.log(`server is listening on ${PORT}`)
 })
 
 //Step 2: Configure GET requests to display info
+
 app.get('/', (req, res) => {
     res.send('Welcome to our schedule website')
 })
@@ -27,6 +31,7 @@ app.get('/schedules', (req, res) => {
 })
 
 //Step 3: Create parameterized routes
+
 app.get('/users/:userNum', (req, res) => {
     const id = req.params.userNum
     res.json(db.users[id])

@@ -2,7 +2,7 @@
   "name": "project3",
   "version": "1.0.0",
   "description": "",
-  "main": "index_3c.js",
+  "main": "index.js",
   "scripts": { 
     "create-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/create_schedule_table.sql",
     "seed-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/seed_schedule_table.sql",

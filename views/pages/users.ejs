@@ -1,24 +1,23 @@
-<div class="users">
+<!--Step 3: Individual Display Users Template-->
+
 <h1> List of Users </h1>
-
-
-<div class = "users-list">
-    <% for(let i = 0; i < userList.length; i++) { %>
-    <div class = "user-item">
-        <div>
-            Name: <%=userList[i].firstname %>
-        </div>
-        <div>
-            Last Name: <%=userList[i].lastname %>
-        </div>
-        <div>
-            Email Address:<%=userList[i].email %>
-        </div>
-    </div>
-    <%} %>
-</div>
-</div>
-
-
-
-   
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <% for(let i=0; i < userList.length; i++) { %>
+        <tr>
+            <td>
+                <%=userList[i].firstname %>
+            </td>
+            <td>
+                <%=userList[i].lastname %>
+            </td>
+            <td>
+                <%=userList[i].email %>
+            </td>
+        </tr>
+        <%} %>
+</table>

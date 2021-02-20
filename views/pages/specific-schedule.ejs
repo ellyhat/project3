@@ -1,10 +1,27 @@
-<h1> Specific Schedule Request</h1>
-<div class = "page-space"></div>
+<!--Step 3: Individual Specific Schedule Template-->
 
-
-<ol start = "1">
-    <% for(let i = 0; i < specificSchedule.length; i++) { %>
-    <li><b>User ID:</b> <%=specificSchedule[i].user_id %>, <br></br><b>Day</b> <%=specificSchedule[i].day %>,<br></br> 
-        <b>Start:</b> <%=specificSchedule[i].start_at %> <br></br> <b>End:</b> <%=specificSchedule[i].start_at %> </li>
-    <%} %>
-</ol>
+<h1> Specific Schedule Request </h1>
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+    </tr>
+    <% for(let i=0; i < specificSchedule.length; i++) { %>
+        <tr>
+            <td>
+                <%=specificSchedule[i].user_id %>
+            </td>
+            <td>
+                <%=specificSchedule[i].day %>
+            </td>
+            <td>
+                <%=specificSchedule[i].start_at %>
+            </td>
+            <td>
+                <%=specificSchedule[i].end_at %>
+            </td>
+        </tr>
+        <%} %>
+</table>

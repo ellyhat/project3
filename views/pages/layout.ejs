@@ -1,26 +1,33 @@
+<!--Step 2: Set up layout template for all pages; include all common page sections as partials-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/template.css">
-    <title><%= title %></title>
-    
+    <link href="http://fonts.cdnfonts.com/css/avenir-next-cyr" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <title>
+        <%= title %>
+    </title>
+
 </head>
+
 <body>
     <header>
         <%- include('../partials/header.ejs') %>
     </header>
     <main>
         <%- include('../partials/top-banner.ejs') %>
-        <%- body %>
+            <%- body %>
     </main>
     <footer>
         <%- include('../partials/footer.ejs') %>
     </footer>
-    
-    
-    
+
 </body>
+
 </html>

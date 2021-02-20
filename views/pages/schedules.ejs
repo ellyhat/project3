@@ -1,11 +1,27 @@
+<!--Step 3: Individual Display Schedules Template-->
+
 <h1> List of Schedules </h1>
-<div class = "page-space"></div>
-
-
-<ol start = "1">
-    <% for(let i = 0; i < schedules.length; i++) { %>
-    <li><b>User ID:</b> <%=schedules[i].user_id %>, <br></br><b>Day</b> <%=schedules[i].day %>,<br></br> 
-        <b>Start:</b> <%=schedules[i].start_at %> <br></br> <b>End:</b> <%=schedules[i].start_at %> </li>
-    <%} %>
-</ol>
-
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+    </tr>
+    <% for(let i=0; i < schedules.length; i++) { %>
+        <tr>
+            <td>
+                <%=schedules[i].user_id %>
+            </td>
+            <td>
+                <%=schedules[i].day %>
+            </td>
+            <td>
+                <%=schedules[i].start_at %>
+            </td>
+            <td>
+                <%=schedules[i].end_at %>
+            </td>
+        </tr>
+        <%} %>
+</table>

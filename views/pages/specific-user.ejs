@@ -1,7 +1,21 @@
+<!--Step 3: Individual Specific User Template-->
+
 <h1> Specific User </h1>
-<div class = "page-space"></div>
-
-<%= specificUser %>
-<%=JSON.stringify(specificUser)%>
-
-
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td>
+      <%=specificUser.firstname %>
+    </td>
+    <td>
+      <%=specificUser.lastname %>
+    </td>
+    <td>
+      <%=specificUser.email %>
+    </td>
+  </tr>
+</table>
