@@ -1,24 +1,22 @@
-const express = require('express') //add module
-const morgan = require('morgan') //add morgan, logs HTTPS codes
-
+//Step 1 - Set up the express app: add modules
+const express = require('express')
 const app = express()
-
-app.set('view engine', 'ejs')
-app.use(morgan('dev'))
-
 var crypto = require("crypto-js")
+
+//Add PORT and import data
 const PORT = 3000
 const db = require('./data.js')
 
+//Test that PORT is working
 app.listen(PORT, () => {
-    console.log(`server is listening on ${PORT}`) 
+    console.log(`server is listening on ${PORT}`)
 })
 
-app.get('/', (req,res) => {
-res.send('Welcome to our schedule website')
+//Step 2: Configure GET requests to display info
+app.get('/', (req, res) => {
+    res.send('Welcome to our schedule website')
 })
 
-//Step 2
 
 app.get('/users', (req, res) => {
     res.json(db.users)
@@ -28,44 +26,50 @@ app.get('/schedules', (req, res) => {
     res.json(db.schedules)
 })
 
-//Define specific patterns in URL - Step 3
-app.get('/users/:userNum', (req,res) => {
+//Step 3: Create parameterized routes
+app.get('/users/:userNum', (req, res) => {
     const id = req.params.userNum
     res.json(db.users[id])
 })
 
 
-app.get('/users/:userNum/schedules', (req,res) => {
+app.get('/users/:userNum/schedules', (req, res) => {
     const id = req.params.userNum
     let arr = []
     for (i = 0; i < db.schedules.length; i++) {
-            if (db.schedules[i].user_id == id) {
-               arr.push(db.schedules[i]) 
-            }
+        if (db.schedules[i].user_id == id) {
+            arr.push(db.schedules[i])
+        }
     }
     if (arr.length > 0) {
-    res.send(arr)
+        res.send(arr)
     }
-    else res.send('No schedule for that user number')   
-}) 
+    else res.send('No schedule for that user number')
+})
+
+//Step 4: Create POST route to update data
 
 app.use(express.urlencoded({ extended: true }))
 
-app.post('/users', (req, res)=> {
-    
+//Add a new user, encrypt password
+
+app.post('/users', (req, res) => {
+
     const newUser = req.body
     newUser.password = crypto.SHA256(`${req.body.password}`).toString()
     db.users.push(newUser)
     res.json(db.users)
-  
+
 })
 
-app.post('/schedules', (req, res)=> {
-    
+//Add a new schedule
+
+app.post('/schedules', (req, res) => {
+
     const newSchedule = req.body
     console.log(newSchedule)
     newSchedule.user_id = Number(req.body.user_id)
-    console.log(typeof(newSchedule.user_id))
+    console.log(typeof (newSchedule.user_id))
     newSchedule.day = Number(req.body.day)
     db.schedules.push(newSchedule)
     res.json(db.schedules)
