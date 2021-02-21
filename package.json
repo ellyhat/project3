@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": { 
-    "create-database": "createdb mrcoffee_app",
+    "create-database": "sudo -u postgres psql postgres -h localhost -f sql/create_database.sql",
     "change-database": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/change_database.sql",
     "create-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/create_schedule_table.sql",
     "seed-tables": "sudo -u postgres psql postgres -h localhost -d mrcoffee_app -f sql/seed_schedule_table.sql",
